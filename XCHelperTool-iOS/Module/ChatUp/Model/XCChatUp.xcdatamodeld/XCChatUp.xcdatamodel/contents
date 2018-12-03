@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="XCChatUp" representedClassName="XCChatUp" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="40" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="font" optional="YES" attributeType="Integer 16" defaultValueString="22" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Integer 16" defaultValueString="10" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="style" optional="YES" attributeType="Integer 16" defaultValueString="30" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="XCChatUp" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--我的银行卡-->
+        <scene sceneID="IHr-fL-xOM">
+            <objects>
+                <tableViewController storyboardIdentifier="XCBankCardController" id="ttF-UI-aa7" customClass="XCBankCardController" customModule="XCHelperTool_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aD3-Q9-nnf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ei7-a6-Nfd">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ei7-a6-Nfd" id="TX1-on-c9S">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ttF-UI-aa7" id="Qy8-pG-SRt"/>
+                            <outlet property="delegate" destination="ttF-UI-aa7" id="5ts-Th-5hH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的银行卡" id="Fex-XC-f2i">
+                        <barButtonItem key="rightBarButtonItem" image="navigationbar_add" id="7xs-lE-wAr">
+                            <connections>
+                                <action selector="addCardAction:" destination="ttF-UI-aa7" id="HCI-SZ-Kgn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCR-gm-zwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="105"/>
+        </scene>
+        <!--添加银行卡-->
+        <scene sceneID="M2j-ho-t7t">
+            <objects>
+                <tableViewController storyboardIdentifier="XCBankCardAddController" id="FmI-OB-WmF" customClass="XCBankCardAddController" customModule="XCHelperTool_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="1" id="jSp-Hx-9LW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="VjZ-lJ-VSx">
+                            <rect key="frame" x="0.0" y="156.5" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2s-Tt-CRH" customClass="ThemeNormalButton" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="35" width="335" height="45"/>
+                                    <color key="backgroundColor" red="0.98823529409999999" green="0.60392156860000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="PoB-pR-Yg1"/>
+                                    </constraints>
+                                    <state key="normal" title="下一步">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextAction:" destination="FmI-OB-WmF" eventType="touchUpInside" id="wdl-AM-VCJ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="o2s-Tt-CRH" firstAttribute="leading" secondItem="VjZ-lJ-VSx" secondAttribute="leading" constant="20" id="5We-vx-g07"/>
+                                <constraint firstAttribute="trailing" secondItem="o2s-Tt-CRH" secondAttribute="trailing" constant="20" id="XEm-iF-m2Q"/>
+                                <constraint firstAttribute="bottom" secondItem="o2s-Tt-CRH" secondAttribute="bottom" id="ucI-EN-hGk"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="请绑定持卡人本人的银行卡" id="kuR-ue-p6y">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="pNh-Ev-zHW">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pNh-Ev-zHW" id="8NN-GI-jMN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="持卡人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMI-Kh-iyV" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="15" width="49" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SunshineDays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp8-tv-EBg">
+                                                    <rect key="frame" x="85" y="16" width="97" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcH-2o-EYU">
+                                                    <rect key="frame" x="335" y="12.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="1UN-nv-a7x"/>
+                                                        <constraint firstAttribute="width" secondItem="jcH-2o-EYU" secondAttribute="height" multiplier="1:1" id="lhU-9f-YOL"/>
+                                                    </constraints>
+                                                    <state key="normal" image="tool_hit"/>
+                                                    <connections>
+                                                        <action selector="showAction:" destination="FmI-OB-WmF" eventType="touchUpInside" id="MPU-7g-Al2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tp8-tv-EBg" firstAttribute="leading" secondItem="8NN-GI-jMN" secondAttribute="leading" constant="85" id="KtG-Gf-JSF"/>
+                                                <constraint firstItem="yMI-Kh-iyV" firstAttribute="centerY" secondItem="8NN-GI-jMN" secondAttribute="centerY" id="Sgu-cr-oaZ"/>
+                                                <constraint firstItem="tp8-tv-EBg" firstAttribute="centerY" secondItem="8NN-GI-jMN" secondAttribute="centerY" id="Xqv-Es-1A6"/>
+                                                <constraint firstItem="yMI-Kh-iyV" firstAttribute="leading" secondItem="8NN-GI-jMN" secondAttribute="leading" constant="15" id="ax0-ne-4JY"/>
+                                                <constraint firstItem="jcH-2o-EYU" firstAttribute="centerY" secondItem="8NN-GI-jMN" secondAttribute="centerY" id="gYj-DB-hXa"/>
+                                                <constraint firstAttribute="trailing" secondItem="jcH-2o-EYU" secondAttribute="trailing" constant="15" id="xVh-Mi-Xiq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="rED-bF-gT1">
+                                        <rect key="frame" x="0.0" y="105.5" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rED-bF-gT1" id="pcH-TO-Vvq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWi-EA-wli" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="14.5" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的银行卡号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fKS-cK-Kqm" customClass="BankCardTextField" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="85" y="5" width="275" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="fIK-M0-bf7"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KWi-EA-wli" firstAttribute="leading" secondItem="pcH-TO-Vvq" secondAttribute="leading" constant="15" id="dQ9-vx-0YY"/>
+                                                <constraint firstItem="KWi-EA-wli" firstAttribute="centerY" secondItem="pcH-TO-Vvq" secondAttribute="centerY" id="j8E-ly-5fC"/>
+                                                <constraint firstItem="fKS-cK-Kqm" firstAttribute="leading" secondItem="pcH-TO-Vvq" secondAttribute="leading" constant="85" id="jbU-m0-Wfe"/>
+                                                <constraint firstAttribute="trailing" secondItem="fKS-cK-Kqm" secondAttribute="trailing" constant="15" id="leg-le-Eur"/>
+                                                <constraint firstItem="fKS-cK-Kqm" firstAttribute="centerY" secondItem="pcH-TO-Vvq" secondAttribute="centerY" id="rM8-0g-e9f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="FmI-OB-WmF" id="TSb-mS-1Co"/>
+                            <outlet property="delegate" destination="FmI-OB-WmF" id="nAm-pd-s64"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="添加银行卡" id="EGO-Ip-Kul">
+                        <barButtonItem key="rightBarButtonItem" image="navigationbar_help" id="Zny-zd-iyL">
+                            <connections>
+                                <action selector="helpAction:" destination="FmI-OB-WmF" id="Nrb-Na-yHP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cardNumberTextField" destination="fKS-cK-Kqm" id="16d-jC-hg8"/>
+                        <outlet property="fullNameLabel" destination="tp8-tv-EBg" id="Gzp-26-zrs"/>
+                        <outlet property="nextButton" destination="o2s-Tt-CRH" id="Cle-hK-vnJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duC-kk-8NO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717.60000000000002" y="97.601199400299862"/>
+        </scene>
+        <!--添加银行卡-->
+        <scene sceneID="ZT5-ea-i6L">
+            <objects>
+                <tableViewController storyboardIdentifier="XCBankCardInfoCreditController" id="ofX-a9-UNA" customClass="XCBankCardInfoCreditController" customModule="XCHelperTool_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dHC-B6-zjh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="UFH-4u-8A1">
+                            <rect key="frame" x="0.0" y="295" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNj-Km-Cw5" customClass="ThemeNormalButton" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="35" width="335" height="45"/>
+                                    <color key="backgroundColor" red="0.98823529409999999" green="0.60392156860000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="mEy-nD-K2A"/>
+                                    </constraints>
+                                    <state key="normal" title="下一步">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextAction:" destination="ofX-a9-UNA" eventType="touchUpInside" id="QmO-1L-Aon"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="wNj-Km-Cw5" secondAttribute="trailing" constant="20" id="bLK-6D-WKp"/>
+                                <constraint firstAttribute="bottom" secondItem="wNj-Km-Cw5" secondAttribute="bottom" id="e7L-1X-9Pu"/>
+                                <constraint firstItem="wNj-Km-Cw5" firstAttribute="leading" secondItem="UFH-4u-8A1" secondAttribute="leading" constant="20" id="iT8-t5-IPW"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection id="SQc-Ex-Kyh">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="mB5-Ag-rpV">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mB5-Ag-rpV" id="Dht-RD-NiC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJE-Ud-aFJ" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="15" width="49" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzJ-ml-4yr">
+                                                    <rect key="frame" x="85" y="16" width="46" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信用卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVm-mH-s9u">
+                                                    <rect key="frame" x="136" y="16" width="46" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YJE-Ud-aFJ" firstAttribute="centerY" secondItem="Dht-RD-NiC" secondAttribute="centerY" id="OSm-u0-D82"/>
+                                                <constraint firstItem="rzJ-ml-4yr" firstAttribute="centerY" secondItem="Dht-RD-NiC" secondAttribute="centerY" id="RVc-Au-2bd"/>
+                                                <constraint firstItem="rzJ-ml-4yr" firstAttribute="leading" secondItem="Dht-RD-NiC" secondAttribute="leading" constant="85" id="UIz-aD-frK"/>
+                                                <constraint firstItem="DVm-mH-s9u" firstAttribute="leading" secondItem="rzJ-ml-4yr" secondAttribute="trailing" constant="5" id="Uc7-Q2-qwD"/>
+                                                <constraint firstItem="DVm-mH-s9u" firstAttribute="centerY" secondItem="rzJ-ml-4yr" secondAttribute="centerY" id="fvL-1o-OYP"/>
+                                                <constraint firstItem="YJE-Ud-aFJ" firstAttribute="leading" secondItem="Dht-RD-NiC" secondAttribute="leading" constant="15" id="qfO-eR-UhO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="请填写银行卡信息" id="ud4-Fi-Z7s">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="Xgm-0D-cWS">
+                                        <rect key="frame" x="0.0" y="141" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xgm-0D-cWS" id="YRm-bd-qHP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fre-gQ-xiD" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="15" width="49" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="月份/年份(例如:0915)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-Nv-iA2" customClass="MaxCountTextField" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="85" y="5" width="240" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="ITM-3f-7KO"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-pO-dNq">
+                                                    <rect key="frame" x="335" y="12.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gz4-pO-dNq" secondAttribute="height" multiplier="1:1" id="83N-6G-JL7"/>
+                                                        <constraint firstAttribute="height" constant="25" id="UgO-K5-gl0"/>
+                                                    </constraints>
+                                                    <state key="normal" image="tool_hit"/>
+                                                    <connections>
+                                                        <action selector="showAction:" destination="ofX-a9-UNA" eventType="touchUpInside" id="jhv-m7-kLD"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gz4-pO-dNq" firstAttribute="centerY" secondItem="YRm-bd-qHP" secondAttribute="centerY" id="2CF-9C-cVY"/>
+                                                <constraint firstItem="fre-gQ-xiD" firstAttribute="leading" secondItem="YRm-bd-qHP" secondAttribute="leading" constant="15" id="RO0-Nj-GaG"/>
+                                                <constraint firstAttribute="trailing" secondItem="tXl-Nv-iA2" secondAttribute="trailing" constant="50" id="UYX-1t-b3g"/>
+                                                <constraint firstItem="fre-gQ-xiD" firstAttribute="centerY" secondItem="YRm-bd-qHP" secondAttribute="centerY" id="X2i-q9-aHN"/>
+                                                <constraint firstAttribute="trailing" secondItem="gz4-pO-dNq" secondAttribute="trailing" constant="15" id="ZJk-Fm-IjF"/>
+                                                <constraint firstItem="tXl-Nv-iA2" firstAttribute="leading" secondItem="YRm-bd-qHP" secondAttribute="leading" constant="85" id="iRC-q2-kcx"/>
+                                                <constraint firstItem="tXl-Nv-iA2" firstAttribute="centerY" secondItem="YRm-bd-qHP" secondAttribute="centerY" id="rK3-7n-iAP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Yev-ee-Fan">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="5wv-mY-zvE">
+                                        <rect key="frame" x="0.0" y="227" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5wv-mY-zvE" id="d9P-lf-a8C">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT2-cx-PnD" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="15" width="49" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行预留手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="obR-Zy-VMN" customClass="MobileTextField" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="85" y="5" width="275" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="KTK-kA-OSq"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LT2-cx-PnD" firstAttribute="leading" secondItem="d9P-lf-a8C" secondAttribute="leading" constant="15" id="5vk-XA-GWD"/>
+                                                <constraint firstItem="obR-Zy-VMN" firstAttribute="leading" secondItem="d9P-lf-a8C" secondAttribute="leading" constant="85" id="UrT-pp-bau"/>
+                                                <constraint firstItem="obR-Zy-VMN" firstAttribute="centerY" secondItem="d9P-lf-a8C" secondAttribute="centerY" id="Vmm-GR-RiS"/>
+                                                <constraint firstAttribute="trailing" secondItem="obR-Zy-VMN" secondAttribute="trailing" constant="15" id="YjP-fK-FGN"/>
+                                                <constraint firstItem="LT2-cx-PnD" firstAttribute="centerY" secondItem="d9P-lf-a8C" secondAttribute="centerY" id="s13-bx-d3b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ofX-a9-UNA" id="xI9-TX-Atf"/>
+                            <outlet property="delegate" destination="ofX-a9-UNA" id="ysC-LC-0Zf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="添加银行卡" id="ZCB-Rb-h0F"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cardNameLabel" destination="rzJ-ml-4yr" id="X2w-B6-BeY"/>
+                        <outlet property="expiryDataTextField" destination="tXl-Nv-iA2" id="gYu-1H-wpG"/>
+                        <outlet property="nextButton" destination="wNj-Km-Cw5" id="CH1-oP-xsI"/>
+                        <outlet property="phonetextField" destination="obR-Zy-VMN" id="hMq-Gb-6fc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vv-aY-dUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="71"/>
+        </scene>
+        <!--添加银行卡-->
+        <scene sceneID="QXK-rl-wEJ">
+            <objects>
+                <tableViewController storyboardIdentifier="XCBankCardInfoDeibtController" id="Xq9-yE-jt6" customClass="XCBankCardInfoDeibtController" customModule="XCHelperTool_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="J1D-Er-XVR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="iI4-3D-Wlu">
+                            <rect key="frame" x="0.0" y="189" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmt-NI-khp" customClass="ThemeNormalButton" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="35" width="335" height="45"/>
+                                    <color key="backgroundColor" red="0.98823529409999999" green="0.60392156860000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="Hl3-m5-Ad0"/>
+                                    </constraints>
+                                    <state key="normal" title="下一步">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextAction:" destination="Xq9-yE-jt6" eventType="touchUpInside" id="Y9B-aN-cfa"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Vmt-NI-khp" secondAttribute="bottom" id="Psn-jb-1Qv"/>
+                                <constraint firstAttribute="trailing" secondItem="Vmt-NI-khp" secondAttribute="trailing" constant="20" id="aLh-h5-FxL"/>
+                                <constraint firstItem="Vmt-NI-khp" firstAttribute="leading" secondItem="iI4-3D-Wlu" secondAttribute="leading" constant="20" id="saF-ns-hnx"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection id="JHC-zi-rks">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="mfS-M0-LP1">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mfS-M0-LP1" id="Lus-vc-W2c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzY-qv-GeP" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="15" width="49" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxH-ud-WId">
+                                                    <rect key="frame" x="85" y="16" width="46" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="储蓄卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sC-L3-i5E">
+                                                    <rect key="frame" x="136" y="16" width="46" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nxH-ud-WId" firstAttribute="leading" secondItem="Lus-vc-W2c" secondAttribute="leading" constant="85" id="Iga-Mz-KxD"/>
+                                                <constraint firstItem="YzY-qv-GeP" firstAttribute="centerY" secondItem="Lus-vc-W2c" secondAttribute="centerY" id="S5N-0N-inl"/>
+                                                <constraint firstItem="nxH-ud-WId" firstAttribute="centerY" secondItem="Lus-vc-W2c" secondAttribute="centerY" id="Wfq-zf-hIq"/>
+                                                <constraint firstItem="YzY-qv-GeP" firstAttribute="leading" secondItem="Lus-vc-W2c" secondAttribute="leading" constant="15" id="aVb-cJ-fVb"/>
+                                                <constraint firstItem="2sC-L3-i5E" firstAttribute="leading" secondItem="nxH-ud-WId" secondAttribute="trailing" constant="5" id="jgP-A1-3VS"/>
+                                                <constraint firstItem="2sC-L3-i5E" firstAttribute="centerY" secondItem="nxH-ud-WId" secondAttribute="centerY" id="wWf-ce-Yzl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Lpt-bl-Ob9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="y2K-aR-5jN">
+                                        <rect key="frame" x="0.0" y="121" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y2K-aR-5jN" id="g0D-a0-iJO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lia-OI-MJB" customClass="CustomTitleLabel" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="15" width="49" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行预留手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-1z-Jm2" customClass="MobileTextField" customModule="XCHelperTool_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="85" y="5" width="275" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Xrb-Kt-19Y"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9fz-1z-Jm2" firstAttribute="centerY" secondItem="g0D-a0-iJO" secondAttribute="centerY" id="0e0-AL-bVf"/>
+                                                <constraint firstAttribute="trailing" secondItem="9fz-1z-Jm2" secondAttribute="trailing" constant="15" id="AKk-XF-Qnx"/>
+                                                <constraint firstItem="Lia-OI-MJB" firstAttribute="leading" secondItem="g0D-a0-iJO" secondAttribute="leading" constant="15" id="S7F-7X-6Ft"/>
+                                                <constraint firstItem="Lia-OI-MJB" firstAttribute="centerY" secondItem="g0D-a0-iJO" secondAttribute="centerY" id="fmV-m3-kBv"/>
+                                                <constraint firstItem="9fz-1z-Jm2" firstAttribute="leading" secondItem="g0D-a0-iJO" secondAttribute="leading" constant="85" id="wYz-Hi-2yY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Xq9-yE-jt6" id="a8o-pG-zrG"/>
+                            <outlet property="delegate" destination="Xq9-yE-jt6" id="gaP-c6-skz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="添加银行卡" id="Gdo-lu-EYZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cardNameLabel" destination="nxH-ud-WId" id="vnb-UF-ifc"/>
+                        <outlet property="nextButton" destination="Vmt-NI-khp" id="WGo-30-Lqe"/>
+                        <outlet property="phonetextField" destination="9fz-1z-Jm2" id="tFb-ms-Vmo"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KP1-Mn-eMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2121" y="85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="navigationbar_add" width="20" height="20"/>
+        <image name="navigationbar_help" width="24" height="24"/>
+        <image name="tool_hit" width="34" height="34"/>
+    </resources>
+</document>

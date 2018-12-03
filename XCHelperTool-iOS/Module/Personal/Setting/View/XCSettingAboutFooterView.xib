@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="XCSettingAboutFooterView" id="iN0-l3-epB" customClass="XCSettingAboutFooterView" customModule="XCHelperTool_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="71"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5d-hO-rAB">
+                    <rect key="frame" x="94" y="4" width="113" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="《软件许可及服务协议》"/>
+                    <connections>
+                        <action selector="protocolAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oBj-P1-ycK"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="和" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-F6-sVA">
+                    <rect key="frame" x="210" y="10" width="10.5" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2018-2018 SunshineDays.All Rights Reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ej-AE-2nz">
+                    <rect key="frame" x="52.5" y="49" width="285" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SunshineDyas 版权所有" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1d-lD-Hl8">
+                    <rect key="frame" x="139" y="32" width="112" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdH-8Y-MXp">
+                    <rect key="frame" x="223.5" y="4" width="82" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="《隐私保护指引》"/>
+                    <connections>
+                        <action selector="privacyAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="3p8-YN-EzI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="F1d-lD-Hl8" firstAttribute="top" secondItem="hsV-F6-sVA" secondAttribute="bottom" constant="10" id="0Ko-9Y-dfD"/>
+                <constraint firstItem="hsV-F6-sVA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="20" id="5Rn-TE-ts8"/>
+                <constraint firstItem="2ej-AE-2nz" firstAttribute="top" secondItem="F1d-lD-Hl8" secondAttribute="bottom" constant="5" id="5st-Sn-MLG"/>
+                <constraint firstItem="hsV-F6-sVA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="8Ir-Nt-XD3"/>
+                <constraint firstItem="2ej-AE-2nz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8kA-in-SJC"/>
+                <constraint firstItem="hsV-F6-sVA" firstAttribute="leading" secondItem="I5d-hO-rAB" secondAttribute="trailing" constant="3" id="KyN-Q4-6V0"/>
+                <constraint firstItem="F1d-lD-Hl8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lrs-Iz-mka"/>
+                <constraint firstItem="I5d-hO-rAB" firstAttribute="centerY" secondItem="hsV-F6-sVA" secondAttribute="centerY" id="WND-fp-wPa"/>
+                <constraint firstItem="NdH-8Y-MXp" firstAttribute="leading" secondItem="hsV-F6-sVA" secondAttribute="trailing" constant="3" id="eUv-Ht-XJL"/>
+                <constraint firstItem="NdH-8Y-MXp" firstAttribute="centerY" secondItem="hsV-F6-sVA" secondAttribute="centerY" id="xTw-Tp-mrX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="0.0" y="-123.5"/>
+        </view>
+    </objects>
+</document>
